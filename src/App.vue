@@ -22,15 +22,15 @@
         styleSentence: [`
  /**
   * 您好！
-  * 您能看到这个网页是我的荣幸。
-  * 这真是一件令人开心的事，因为...  
-  *          
-  * 这是我的个人简历  (￣︶￣)↗
+  * 您能看到这个网页是我的荣幸。                
+  * 这真是一件令人开心的事，因为...                 
+  *       
+  * 这是我的个人简历  (￣︶￣)↗                 
   */
 
  /** 
-  * 我要开始咯~ 
-  * 先来点过渡效果吧 
+  * 我要开始咯~                
+  * 先来点过渡效果吧！                
   */
 
 * {
@@ -39,12 +39,12 @@
   -webkit-transition: all .3s;
           transition: all .3s;
 }
-
+                
 /* 屏幕太亮容易伤眼睛哦。。。 */
 html {
   background: rgb(63, 82, 99);
 }
-
+                 
 /* 嗯，这颜色还不错。再加个边框吧！ */
 .code-ct {
   float: left;
@@ -58,28 +58,40 @@ html {
   color: #ccc;    
   box-shadow: 5px 5px 10px rgba(255,255,255,.3);
 }
-
-/* 要是有点高亮效果就好了 */
+                
+/* 要是有点高亮效果就好了 */                
 .token.comment{ color: #857f6b; font-style: italic;}
 .token.selector{ color: #db4437; }
 .token.property{ color: #4285f4; }
 .token.punctuation{ color: #f4b400; }
 .token.function{ color: #0f9d58; }
-
-/* 要不，再来点3D效果？ */
+                
+/* 要不，再来点3D效果？ */                
 html {
   -webkit-perspective: 1000px;
           perspective: 1000px;
 }
-.code-ct,pre {
+.code-ct {
   -webkit-transition: 1s;
           transition: 1s;
   -webkit-transform: rotateY(10deg) translateZ(-50px);
           transform: rotateY(10deg) translateZ(-50px);
 
 }
-
+                
 /* 好了，我现在要找一个看着顺眼的位置。。。 */
+@keyframes toright {
+  0% {
+    -webkit-transform: rotateY(10deg) translateZ(-50px);
+            transform: rotateY(10deg) translateZ(-50px);
+  }
+  100% {
+    margin-left: 55vw;
+    -webkit-transform: rotateY(-10deg) translateZ(-50px);
+            transform: rotateY(-10deg) translateZ(-50px);
+    box-shadow: -5px 5px 10px rgba(255,255,255,.3);
+  }
+}
 .resume-ct {
   position: absolute;
   right: 0;
@@ -92,25 +104,25 @@ html {
           transition: 1s;
 }
 .code-ct {
-  margin-left: 55vw;
-  -webkit-transform: rotateY(-10deg) translateZ(-50px);
-          transform: rotateY(-10deg) translateZ(-50px);
-  box-shadow: -5px 5px 10px rgba(255,255,255,.3);
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-name: toright;
 }
 .resume-ct {
   background-color: #eee;
   right: 47vw;
 }                                                           
-   
+                                
 /* 现在，请允许我介绍一下我自己 */
      `, `
     <h2 class="name">王康</h2>
     <p class="base-info">男，25岁，毕业于江苏师范大学</p>
     <p>电话：13675209645   邮箱：wangkang3034@163.com</p>
-    <h3 class="title">工作经历</h3>
-    <p>2015 年 1 月至 2016 年 5 月就职于 连云港铭华环保材料有限公司</p>
-    <p>任前端开发工程师</p>
-    <p>全面负责公司官网的开发与维护。主要使用HTML、CSS、JavaScript（jQuery）等前端主流技术。并使用了“双飞翼”布局，响应式开发等方法。</p>
+    <h3>应聘职位</h3>
+    <p>前端工程师</p>
     <h3 class="title">项目经验/作品展示</h3>
     <ul class="works">
 <!-- 音乐播放器 -->
@@ -226,9 +238,13 @@ html {
         <li><span class="seq">9.</span><p></p>具有较高的审美能力，能够承担较强的工作压力。</li>
       </ul>
     </ul>
+    <h3 class="title">工作经历</h3>
+    <p>2015 年 1 月至 2016 年 5 月就职于 连云港铭华环保材料有限公司</p>
+    <p>任前端开发工程师</p>
+    <p>全面负责公司官网的开发与维护。主要使用HTML、CSS、JavaScript（jQuery）等前端主流技术。并使用了“双飞翼”布局，响应式开发等方法。</p>
      `, `
 /**                     
- * 额 ...
+ * 呃 ...
  * 这是什么鬼 ...            
  * 是不是感觉很乱？                            
  * 下面就是见证奇迹的时刻！          
@@ -405,7 +421,7 @@ html {
         this.code = this.styleSentence[0].substring(0, n)
         this.styleCode = '<style>' + this.code + '</style>'
         n++
-      }, 50)
+      }, 30)
     }
   }
 </script>
